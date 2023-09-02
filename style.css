@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
+}
+.header,
+.contents{
+    grid-column: 2/-1;
+}
+.menu-panel{
+    grid-column: 1/2;
+    grid-row: 1/-1;
+}
+.contents{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.main-content{
+    grid-column: 1/2;
+}
+.side-content{
+    grid-column: 2/3;
+}
