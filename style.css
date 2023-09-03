@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 :root{
-    --primary-bg: #e5e5e5;
+    --primary-bg: #eef2ff;
     --secondary-bg: #fafafa;
     --tertiary-bg: #075985;
     --accent-bg: #ef4444;
@@ -21,18 +21,12 @@ body{
     color: var(--primary-text);
     background-color: var(--primary-bg);
 }
-svg{
-    fill: var(--secondary-bg);
-    height: 20px;
-}
-.logo svg{
-    height: 50px;
-}
 button,
 ul,
 a{
     color: var(--secondary-text);
     font-weight: 500;
+    font-family: inherit;
 }
 ul{
     list-style-type: none;
@@ -41,42 +35,84 @@ ul{
 a{
     text-decoration: none;
 }
+a:hover{
+    transform: scale(1.07);
+    transition: 0.5s;
+    cursor: pointer;
+}
+input[type="search"]{
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    font-family: inherit;
+    border: none;
+    border-radius: 6px;
+    width: 90%;
+    height: 35px;
+    padding: 0.8rem;
+    outline: none;
+}
+input[type="search"]:focus{
+    border: 2px solid var(--tertiary-bg);
+}
+button{
+    background-color: var(--tertiary-bg);
+    border: none;
+    border-radius: 6px;
+    width: 80px;
+    height: 40px;
+
+}
+button:hover,
+button:focus{
+    background-color: var(--accent-bg);
+    cursor: pointer;
+    transition: 0.8s;
+}
+img.profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+img.large-pic{
+    width: 60px;
+    height: 60px; 
+}
+
 .container{
-    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(220px, 1fr) 4fr;
     grid-template-rows: 1fr 5fr;
 }
 
+
+/*********** SIDEBAR ***********************/
 .sidebar{
     background-color: var(--tertiary-bg);
     color: var(--secondary-text);
-    height: 100%;
     padding: 1rem;
     grid-column: 1/2;
     grid-row: 1/-1;
 
-    grid-template-rows: 1fr 3fr 2fr 4fr;
+    grid-template-rows: 50px 240px 120px;
     row-gap: 2rem;
 }
-.sidebar,
+.sidebar, 
 .logo,
-ul,
-ul li
-{
+.sidebar ul, 
+.sidebar li{
     display: grid;
 }
-
 .logo,
-ul li{
+.sidebar li{
     grid-template-columns: 1fr 2fr;
     align-items: center;
 }
-.logo svg,
-li svg{
+.logo img, 
+li img{
+    grid-column: 1/2;
     justify-self: center;
 }
-ul{
+.sidebar ul{
     row-gap: 1rem;
 }
 .menu ul{
@@ -90,9 +126,45 @@ ul{
     font-size: 26px;
 }
 
+
+/*********** HEADER ***********************/
 .header{
     background-color: var(--secondary-bg);
+    padding: 1rem;
+    box-shadow: 0px 1px 3px var(--tertiary-bg);
+
+    grid-template-columns: minmax(250px, 2fr) 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1rem;
 }
+.header,
+.left,
+.right{
+    display: grid;
+}
+
+.left{
+    grid-template-columns: 1fr 10fr;
+    align-items: center;
+}
+.left img{
+    justify-self: center;
+}
+.left.large-profile{
+    column-gap: 1rem;
+}
+.right{
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-self: center;
+}
+.right.controls{
+    column-gap: 1rem;
+}
+.name > a{
+    color: var(--primary-text);
+}
+
 .header,
 .contents{
     grid-column: 2/-1;
