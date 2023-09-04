@@ -15,10 +15,11 @@
     --black: #171717;
     --white: #f9fafb;
     --gray: #3f3f46;
+
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body{
-    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--black);
     background-color: var(--primary-bg);
 }
@@ -88,7 +89,7 @@ img.large-pic{
 .container{
     display: grid;
     grid-template-columns: minmax(220px, 1fr) 4fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 150px 5fr;
 }
 
 /******************************** SIDEBAR *********************************/
@@ -135,6 +136,7 @@ li img{
 /******************************** HEADER *********************************/
 .header{
     background-color: var(--secondary-bg);
+    height: 150px;
     padding: 1rem;
     box-shadow: 0px 1px 3px var(--tertiary-bg);
 
@@ -201,7 +203,7 @@ li img{
     height: 220px;
     border-left: 10px solid var(--accent-bg);
     border-radius: 10px;
-    padding: 1rem;
+    padding: 1.5rem;
     box-shadow: 1px 1px 3px var(--accent-bg);
     position: relative;
     display: flex;
@@ -210,12 +212,47 @@ li img{
 }
 .card-controls{
     position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
 }
 .card-controls img{
     margin-left: 0.8rem;
 }
 .side-content{
     grid-column: 2/3;
+    padding: 1rem;
+}
+.side-content .card{
+    border: none;
+    height: 300px;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.announcement .card > div{
+    height: 60px;
+    overflow: hidden;
+}
+.announcement .card > div:hover{
+    cursor: pointer;
+}
+.card-title{
+    font-weight: 500;
+    font-size: 18px;
+}
+.announcement .card-title,
+.trending .name{
+    font-size: 14px;
+}
+.card-content{
+    color: var(--gray);
+}
+.announcement .card-content,
+.description{
+    font-size: 12px;
+}
+.trending-profile{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
